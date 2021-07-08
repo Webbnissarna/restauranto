@@ -1,18 +1,22 @@
 {
   "name": "my-gatsby-site",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
-  "description": "My Gatsby Site",
-  "author": "Master Kenth",
+  "description": "Best restaurant site",
+  "author": "Webbnissarna",
   "keywords": [
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
+    "develop": "gatsby develop -H 0.0.0.0 -S",
+    "start": "gatsby develop -H 0.0.0.0 -S",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "lint": "eslint --fix .",
+    "style": "prettier --write .",
+    "fix-all": "yarn lint; yarn style",
+    "test": "jest"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
@@ -31,6 +35,29 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "theme-ui": "^0.10.0"
+    "theme-ui": "^0.10.0",
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^16.0.0",
+    "@types/react": "^17.0.13",
+    "babel-jest": "^27.0.6",
+    "babel-preset-gatsby": "^1.9.0",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^24.3.6",
+    "jest": "^27.0.6",
+    "prettier": "^2.3.2",
+    "typescript-eslint": "^0.0.1-alpha.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

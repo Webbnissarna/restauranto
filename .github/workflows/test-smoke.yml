@@ -1,0 +1,66 @@
+# Workflow for running smoke tests for pull requests etc.
+
+name: test - smoke
+
+on:
+  pull_request:
+
+  workflow_dispatch:
+
+jobs:
+  smoke-tests:
+    name: Smoke Tests
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      # yarn / node modules
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: cache yarn
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          # note: uses a separate (dev) cache, different from the build workflow
+          key: ${{ runner.os }}-yarn-dev-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-dev-
+      # install yarn (will use cache if possible)
+      - name: yarn install
+        run: yarn install
+
+      - name: lint check
+        if: ${{ github.base_ref }}
+        env:
+          GIT_BASE_REF: ${{ github.base_ref }}
+        run: |
+          file_list=$(git diff --name-only --diff-filter=d origin/$GIT_BASE_REF HEAD | egrep -i '\.([jt]sx?)$')
+          if [[ -n $file_list ]]
+          then
+              yarn eslint $file_list
+          else
+              echo "no files to lint"
+          fi
+      - name: style check
+        if: ${{ github.base_ref }}
+        env:
+          GIT_BASE_REF: ${{ github.base_ref }}
+        run: |
+          file_list=$(git diff --name-only --diff-filter=d origin/$GIT_BASE_REF HEAD | egrep -i '\.([jt]sx?|json|md|ya?ml|s?css)$')
+          if [[ -n $file_list ]]
+          then
+              yarn prettier --check $file_list
+          else
+              echo "no files to style-check"
+          fi
+      # run tests
+      - name: run tests
+        run: yarn test
