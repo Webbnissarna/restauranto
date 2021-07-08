@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "develop": "gatsby develop -H 0.0.0.0 -S",
+    "develop-insecure": "gatsby develop -H 0.0.0.0",
     "start": "gatsby develop -H 0.0.0.0 -S",
     "build": "gatsby build",
     "serve": "gatsby serve",
