@@ -16,10 +16,8 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
-  console.log("result", result);
 
   result?.data?.allContentfulProduct?.nodes.forEach((product) => {
-    console.log("slug", product.slug);
     createPage({
       path: `product/${product.slug}`,
       component: productpageTemplate,

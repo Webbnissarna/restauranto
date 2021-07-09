@@ -28,8 +28,6 @@ export default function ProductPage(
 ): JSX.Element {
   const { data } = props;
 
-  console.log("data", data);
-
   const ingredients = data?.contentfulProduct?.ingredients;
   const tags = data?.contentfulProduct?.tags;
   const price =
