@@ -1,27 +1,11 @@
 import React from "react";
 import { PageProps, graphql } from "gatsby";
-import { IGatsbyImageData, GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
+import { ContentfulProduct, Context } from "../types/types";
 
-type Image = {
-  title?: string;
-  gatsbyImageData?: IGatsbyImageData;
-};
-
-type Data = {
-  contentfulProduct: {
-    name: string;
-    tags?: Array<string>;
-    ingredients?: Array<string>;
-    image?: Image;
-    price: number;
-    description?: {
-      description: string;
-    };
-  };
-};
-type Context = {
-  id: string;
-};
+interface Data {
+  contentfulProduct: ContentfulProduct;
+}
 
 export default function ProductPage(
   props: PageProps<Data, Context>
@@ -42,7 +26,7 @@ export default function ProductPage(
       <ul>
         {tags &&
           tags.map((tag) => {
-            return <li>{tag}</li>;
+            return <li>{tag.name}</li>;
           })}
       </ul>
       <ul>
@@ -62,7 +46,10 @@ export const pageQuery = graphql`
     contentfulProduct(id: { eq: $id }) {
       id
       name
-      tags
+      tags {
+        color
+        name
+      }
       ingredients
       price
       description {
