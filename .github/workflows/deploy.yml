@@ -1,0 +1,19 @@
+name: Deploy website
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: deploying to surge
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install surge and fire deployment
+        uses: actions/checkout@v1
+        with:
+          node-version: 14.17.3
+      - run: npm install -g surge
+      - run: npm install -g yarn
+      - run: yarn set version berry
+      - run: yarn build
+      - run: surge ./ ${{ SECRETS.SURGE_DOMAIN }} --token ${{ SECRETS.SURGE_TOKEN }}
