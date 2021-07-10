@@ -1,3 +1,80 @@
+@font-face {
+  font-family: "SeoulHangang";
+  src: url("../fonts/SeoulHangangB.woff2") format("woff2"),
+    url("../fonts/SeoulHangangB.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SeoulHangang";
+  src: url("../fonts/SeoulHangangL.woff2") format("woff2"),
+    url("../fonts/SeoulHangangL.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SeoulHangang";
+  src: url("../fonts/SeoulHangangEB.woff2") format("woff2"),
+    url("../fonts/SeoulHangangEB.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SeoulHangang";
+  src: url("../fonts/SeoulHangangM.woff2") format("woff2"),
+    url("../fonts/SeoulHangangM.woff") format("woff"),
+    url("../fonts/SeoulHangangM.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SeoulNamsan";
+  src: url("../fonts/SeoulNamsanB.woff2") format("woff2"),
+    url("../fonts/SeoulNamsanB.woff") format("woff"),
+    url("../fonts/SeoulNamsanB.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SeoulNamsan";
+  src: url("../fonts/SeoulNamsanEB.woff2") format("woff2"),
+    url("../fonts/SeoulNamsanEB.woff") format("woff"),
+    url("../fonts/SeoulNamsanEB.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SeoulNamsan";
+  src: url("../fonts/SeoulNamsanL.woff2") format("woff2"),
+    url("../fonts/SeoulNamsanL.woff") format("woff"),
+    url("../fonts/SeoulNamsanL.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SeoulNamsan";
+  src: url("../fonts/SeoulNamsanM.woff2") format("woff2"),
+    url("../fonts/SeoulNamsanM.woff") format("woff"),
+    url("../fonts/SeoulNamsanM.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   background-color: inherit;
   margin: 0;
