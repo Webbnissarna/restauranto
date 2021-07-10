@@ -8,7 +8,7 @@ export interface Image {
 export interface Tag {
   color: string;
   name: string;
-  image?: Image;
+  image?: Array<Image>;
 }
 
 export interface ContentfulProduct {

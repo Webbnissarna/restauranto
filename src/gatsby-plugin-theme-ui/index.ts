@@ -6,6 +6,11 @@ const theme = {
     base: "1rem",
     small: "0.75rem",
   },
+  fontWeights: {
+    base: 400,
+    semibold: 500,
+    bold: 600,
+  },
   space: {
     "2xs": "0.125rem",
     xs: "0.25rem",
