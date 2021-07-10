@@ -1,12 +1,14 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import * as React from "react";
-import { graphql, PageProps } from "gatsby";
+import { graphql, PageProps, Link } from "gatsby";
 import { Homepage } from "../types/types";
 import { Box, Flex, Grid } from "theme-ui";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { convertToBgImage } from "gbimage-bridge";
 import BackgroundImage from "gatsby-background-image";
+
+import RootContainer from "../components/atoms/RootContainer";
 
 type Data = {
   contentfulFrontpage: Homepage;
@@ -23,7 +25,7 @@ const IndexPage = (props: PageProps<Data>): JSX.Element => {
   const categories = data.categories && data.categories;
 
   return (
-    <Flex
+    <RootContainer
       as={`main`}
       sx={{ alignItems: "center", width: "100%", backgroundColor: "inverted" }}
     >
@@ -60,56 +62,58 @@ const IndexPage = (props: PageProps<Data>): JSX.Element => {
               const bgImage = convertToBgImage(image);
               const price = product.price / 100;
               return (
-                <BackgroundImage
-                  Tag={`section`}
-                  {...bgImage}
-                  sx={{
-                    borderRadius: "default",
-                    overflow: "hidden",
-                    width: "100%",
-                    height: 150,
-                    textAlign: "center",
-                  }}
-                >
-                  <Flex
+                <Link to={`/product/${product.slug}`}>
+                  <BackgroundImage
+                    Tag={`section`}
+                    {...bgImage}
                     sx={{
+                      borderRadius: "default",
+                      overflow: "hidden",
                       width: "100%",
-                      height: "100%",
-                      position: "relative",
-                      color: "base",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      justifyContent: "flex-end",
+                      height: 150,
+                      textAlign: "center",
                     }}
                   >
-                    <Box
+                    <Flex
                       sx={{
-                        position: "absolute",
-                        top: 0,
-                        right: 0,
-                        padding: "sm",
-                        backgroundColor: "transparent",
-                        borderBottomLeftRadius: "default",
-                        fontSize: "base",
-                      }}
-                    >
-                      {`${price.toFixed(2)} :-`}
-                    </Box>
-                    <Box
-                      as={`span`}
-                      sx={{
-                        textAlign: "center",
-                        backgroundColor: "transparent",
                         width: "100%",
-                        padding: "sm",
-                        fontSize: "h3",
+                        height: "100%",
+                        position: "relative",
                         color: "base",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "flex-end",
                       }}
                     >
-                      {product.name}
-                    </Box>
-                  </Flex>
-                </BackgroundImage>
+                      <Box
+                        sx={{
+                          position: "absolute",
+                          top: 0,
+                          right: 0,
+                          padding: "sm",
+                          backgroundColor: "transparent",
+                          borderBottomLeftRadius: "default",
+                          fontSize: "base",
+                        }}
+                      >
+                        {`${price.toFixed(2)} :-`}
+                      </Box>
+                      <Box
+                        as={`span`}
+                        sx={{
+                          textAlign: "center",
+                          backgroundColor: "transparent",
+                          width: "100%",
+                          padding: "sm",
+                          fontSize: "h3",
+                          color: "base",
+                        }}
+                      >
+                        {product.name}
+                      </Box>
+                    </Flex>
+                  </BackgroundImage>
+                </Link>
               );
             })}
         </Grid>
@@ -147,7 +151,7 @@ const IndexPage = (props: PageProps<Data>): JSX.Element => {
           <Box as={`span`}>{contact.adress}</Box>
         </Flex>
       </Box>
-    </Flex>
+    </RootContainer>
   );
 };
 
@@ -167,8 +171,10 @@ export const mainmenuQuery = graphql`
           gatsbyImageData(resizingBehavior: FILL, width: 400, aspectRatio: 1.5)
         }
         discount
+        slug
       }
       banner {
+        slug
         price
         name
         discount

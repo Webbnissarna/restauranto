@@ -99,14 +99,16 @@ export default function ProductPage(
         </ul>
       </div>
 
-      <section
-        title="Description"
-        sx={{
-          marginX: 60,
-        }}
-      >
-        <span>{data.contentfulProduct.description.description}</span>
-      </section>
+      {data.contentfulProduct.description && (
+        <section
+          title="Description"
+          sx={{
+            marginX: 60,
+          }}
+        >
+          <span>{data.contentfulProduct.description.description}</span>
+        </section>
+      )}
 
       <section
         title="Ingredients"
