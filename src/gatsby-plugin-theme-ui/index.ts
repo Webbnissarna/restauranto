@@ -22,6 +22,12 @@ const theme = {
     base: "white",
     phone: "#4FA0FF",
     inverted: "black",
+    transparent: "#00000080",
+  },
+  shadows: {
+    bottomRight: "2px 2px 2px rgba(0,0,0,0.75)",
+    bottomRightLight: "2px 2px 2px rgba(0,0,0,0.25)",
+    bottom: "0px 2px 2px #00000040",
   },
 };
 
