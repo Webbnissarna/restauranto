@@ -11,6 +11,13 @@ export interface Tag {
   image?: Array<Image>;
 }
 
+export interface Nutrients {
+  name: string;
+  calories: number;
+  carbohydrates: number;
+  [key: string]: any;
+}
+
 export interface ContentfulProduct {
   name: string;
   tags?: Array<Tag>;
@@ -20,6 +27,7 @@ export interface ContentfulProduct {
   description?: {
     description: string;
   };
+  nutrients: Nutrients;
 }
 
 export interface ProductOverview {
