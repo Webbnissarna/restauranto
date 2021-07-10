@@ -1463,7 +1463,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.10.0, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.14.0, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.10.0, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.13.17, @babel/runtime@npm:^7.14.0, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
   version: 7.14.6
   resolution: "@babel/runtime@npm:7.14.6"
   dependencies:
@@ -9017,6 +9017,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"filter-invalid-dom-props@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "filter-invalid-dom-props@npm:2.0.0"
+  dependencies:
+    html-attributes: 1.1.0
+  checksum: 885a84ed860175dd8d7c16a1ca49ead1ed819241dd972dc150d45d57cb4ccf18c140d09e3d71c8592041408d3185f5a81f8687d97a754a6f487488a0e7ccd0b8
+  languageName: node
+  linkType: hard
+
 "filter-obj@npm:^1.1.0":
   version: 1.1.0
   resolution: "filter-obj@npm:1.1.0"
@@ -9355,6 +9364,23 @@ fsevents@^1.2.7:
   version: 1.0.1
   resolution: "functional-red-black-tree@npm:1.0.1"
   checksum: 477ecaf62d4f8d788876099b35ed4b97586b331e729d2d28d0df96b598863d21c18b8a45a6cbecb6c2bf7f5e5ef1e82a053570583ef9a0ff8336683ab42b8d14
+  languageName: node
+  linkType: hard
+
+"gatsby-background-image@npm:^1.5.3":
+  version: 1.5.3
+  resolution: "gatsby-background-image@npm:1.5.3"
+  dependencies:
+    "@babel/runtime": ^7.13.17
+    filter-invalid-dom-props: ^2.0.0
+    global: ^4.4.0
+    short-uuid: ^4.1.0
+    sort-media-queries: ^0.2.2
+  peerDependencies:
+    gatsby: ^2.0.0 || ^3.0.0
+    react: ">=16.x"
+    react-dom: ">=16.x"
+  checksum: f71dbd51185ef38e40d0959ecd86715b6ea7c81f244c313d208341341524331c244b3ec081c420cbd9eca2b02eb8d8a9f21d94e43c66949c2920652d6af97a1b
   languageName: node
   linkType: hard
 
@@ -10045,6 +10071,19 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"gbimage-bridge@npm:^0.1.4":
+  version: 0.1.4
+  resolution: "gbimage-bridge@npm:0.1.4"
+  peerDependencies:
+    gatsby: ^3.0.0
+    gatsby-background-image: ^1.4.1
+    gatsby-plugin-image: ^1.0.1
+    react: ^16.14.0 || ^17.0.0
+    react-dom: ^16.14.0 || ^17.0.0
+  checksum: 691bcca008f2e8af2d2a1bc87158e3e78807e9ee1d9f1df1f90e9fe66cbc1fae9856688624ae8a7dcc04f9c91558e31cc238d679b5dc16eb5262f5170526540f
+  languageName: node
+  linkType: hard
+
 "gensync@npm:^1.0.0-beta.1, gensync@npm:^1.0.0-beta.2":
   version: 1.0.0-beta.2
   resolution: "gensync@npm:1.0.0-beta.2"
@@ -10301,7 +10340,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"global@npm:~4.4.0":
+"global@npm:^4.4.0, global@npm:~4.4.0":
   version: 4.4.0
   resolution: "global@npm:4.4.0"
   dependencies:
@@ -10917,6 +10956,13 @@ fsevents@^1.2.7:
   version: 1.0.0
   resolution: "hsla-regex@npm:1.0.0"
   checksum: 2460f935b556795a7cadc17978bc4cd90f74aaba05505f7040e7809336c68e757dcdcc2121004a4d926a6f04295cf68a575a81c0fd2d4e7280dc201a98eb2859
+  languageName: node
+  linkType: hard
+
+"html-attributes@npm:1.1.0":
+  version: 1.1.0
+  resolution: "html-attributes@npm:1.1.0"
+  checksum: 350bdee258d7ee3d881cdce9b519ac49eb767f1e31a68ca56412c6353958ec4cc76efcd4210dd3e5efe7801777e6bb5eecc631cd28213baef9c6292e4db2299f
   languageName: node
   linkType: hard
 
@@ -14596,6 +14642,7 @@ fsevents@^1.2.7:
     eslint-config-prettier: ^8.3.0
     eslint-plugin-jest: ^24.3.6
     gatsby: ^3.8.1
+    gatsby-background-image: ^1.5.3
     gatsby-plugin-gatsby-cloud: ^2.9.0
     gatsby-plugin-image: ^1.9.0
     gatsby-plugin-manifest: ^3.9.0
@@ -14606,6 +14653,7 @@ fsevents@^1.2.7:
     gatsby-source-contentful: ^5.9.0
     gatsby-source-filesystem: ^3.9.0
     gatsby-transformer-sharp: ^3.9.0
+    gbimage-bridge: ^0.1.4
     jest: ^27.0.6
     prettier: ^2.3.2
     react: ^17.0.1
@@ -18271,6 +18319,16 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
+"short-uuid@npm:^4.1.0":
+  version: 4.2.0
+  resolution: "short-uuid@npm:4.2.0"
+  dependencies:
+    any-base: ^1.1.0
+    uuid: ^8.3.2
+  checksum: 0f83f3038bd6923779f5db7f4b6813c104db3ef22666c79e163dd91964575e85ef7eafd53e33a79ec038a407a687ed446a730bb9457a59c68a698292a90f54ba
+  languageName: node
+  linkType: hard
+
 "side-channel@npm:^1.0.4":
   version: 1.0.4
   resolution: "side-channel@npm:1.0.4"
@@ -18529,6 +18587,15 @@ resolve@^2.0.0-next.3:
   dependencies:
     is-plain-obj: ^1.0.0
   checksum: c0437ce7fbcc35e6f255f46cc4ba350cadac3199f4af3ee8c8b305f50a35b6ead4fec814a4d86ffa49c8ec9e5bf064877232a7d45270c6e31f725209a1c4ef3d
+  languageName: node
+  linkType: hard
+
+"sort-media-queries@npm:^0.2.2":
+  version: 0.2.2
+  resolution: "sort-media-queries@npm:0.2.2"
+  dependencies:
+    xtend: ^4.0.0
+  checksum: e8993fe1d5946c1e68d9562fa646f1ec1015c84ab1b2abce7484b26327d97d7ae24b1f921ec72ece91160a88f688578fcdae30c129138cf396ab2fe9185c14cc
   languageName: node
   linkType: hard
 
@@ -20607,6 +20674,15 @@ typescript@^4.3.5:
   bin:
     uuid: ./bin/uuid
   checksum: 1ce3f37e214d6d0dc94a6a9663a0365013ace66bc3fd5b203e6f5d2eeb978aaee1192367222386345d30b4c6a447928c501121aa84c637724bf105ef57284949
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^8.3.2":
+  version: 8.3.2
+  resolution: "uuid@npm:8.3.2"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: aed2bcef341f95635f308fea8831fb9038b18c485fe7e71feb89d2e05602dfecad0cb6f2246fae096d4da425cca6e8a71056f28abd97ad98cf770a2018853248
   languageName: node
   linkType: hard
 

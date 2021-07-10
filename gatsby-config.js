@@ -2,8 +2,8 @@ require("dotenv").config();
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "My Gatsby Site",
+    siteUrl: "https://www.restauranto.andreeastroem.se",
+    title: "Restauranto",
   },
   plugins: [
     {
