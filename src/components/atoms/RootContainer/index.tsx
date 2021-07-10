@@ -24,6 +24,7 @@ export default function RootContainer({ children }: Props): JSX.Element {
           backgroundColor: "backdrop",
           width: 375,
           margin: 0,
+          paddingY: "md",
           minHeight: "100vh",
           color: "base",
           display: "flex",

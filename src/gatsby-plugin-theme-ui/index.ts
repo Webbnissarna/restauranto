@@ -27,9 +27,11 @@ const theme: Theme = {
     "2xl": "1.25rem",
   },
   radii: {
+    "2xs": "0.125rem",
     default: "0.625rem",
   },
   colors: {
+    backdrop: "#300",
     base: "white",
     phone: "#4FA0FF",
     inverted: "black",
@@ -39,6 +41,9 @@ const theme: Theme = {
     bottomRight: "2px 2px 2px rgba(0,0,0,0.75)",
     bottomRightLight: "2px 2px 2px rgba(0,0,0,0.25)",
     bottom: "0px 2px 2px #00000040",
+  },
+  borders: {
+    transparentWhite: "1px solid rgba(255, 255, 255, 0.5)",
   },
   styles: {
     root: {
