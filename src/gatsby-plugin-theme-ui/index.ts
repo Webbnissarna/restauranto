@@ -44,23 +44,40 @@ const theme: Theme = {
     root: {
       h1: {
         fontFamily: "heading",
+        fontSize: "h1",
+        margin: 0,
+        padding: 0,
       },
 
       h2: {
         fontFamily: "heading",
+        fontSize: "h2",
+        margin: 0,
+        padding: 0,
       },
 
       h3: {
         fontFamily: "heading",
+        fontSize: "h3",
+        margin: 0,
+        padding: 0,
       },
       p: {
         fontFamily: "body",
+        fontSize: "base",
+        margin: 0,
+        padding: 0,
       },
       span: {
         fontFamily: "body",
+        fontSize: "base",
+        margin: 0,
+        padding: 0,
       },
       li: {
         fontFamily: "body",
+        margin: 0,
+        padding: 0,
       },
     },
   },
