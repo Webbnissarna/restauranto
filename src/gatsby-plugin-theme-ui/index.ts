@@ -1,4 +1,10 @@
-const theme = {
+import { Theme } from "theme-ui";
+
+const theme: Theme = {
+  fonts: {
+    body: "SeoulNamsan, Roboto, sans-serif",
+    heading: "SeoulHangang, serif",
+  },
   fontSizes: {
     h1: "3rem",
     h2: "2.25rem",
@@ -33,6 +39,30 @@ const theme = {
     bottomRight: "2px 2px 2px rgba(0,0,0,0.75)",
     bottomRightLight: "2px 2px 2px rgba(0,0,0,0.25)",
     bottom: "0px 2px 2px #00000040",
+  },
+  styles: {
+    root: {
+      h1: {
+        fontFamily: "heading",
+      },
+
+      h2: {
+        fontFamily: "heading",
+      },
+
+      h3: {
+        fontFamily: "heading",
+      },
+      p: {
+        fontFamily: "body",
+      },
+      span: {
+        fontFamily: "body",
+      },
+      li: {
+        fontFamily: "body",
+      },
+    },
   },
 };
 
